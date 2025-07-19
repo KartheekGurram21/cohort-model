@@ -1,6 +1,6 @@
 const { Schema, default: mongoose } = require('mongoose');
 
-mongoose.connect('mongodb:localhost:27017/course-selling-app');
+mongoose.connect('mongodb:localhost:27017/course-selling-app').then(() => console.log('connected to db')).catch(err => console.log(err));
 
 const userSchema = new Schema({
     email: {
