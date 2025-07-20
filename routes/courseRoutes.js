@@ -1,14 +1,10 @@
 const { Router } = require('express');
-
+const { adminMiddleware } = require('../middlewares/adminMiddleware');
+const { courseModel } = require('../db');
 const courseRouter = Router();
 
-courseRouter.post('/purchase', (req, res) => {
 
-});
 
-courseRouter.get('/courses', (req, res) => {
-
-});
 
 module.exports = {
     courseRouter: courseRouter

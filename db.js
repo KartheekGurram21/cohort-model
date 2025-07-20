@@ -1,7 +1,5 @@
 const { Schema, default: mongoose } = require('mongoose');
 
-mongoose.connect('mongodb:localhost:27017/course-selling-app').then(() => console.log('connected to db')).catch(err => console.log(err));
-
 const userSchema = new Schema({
     email: {
         type: String,
@@ -14,7 +12,7 @@ const userSchema = new Schema({
 
 const adminSchema = new Schema({
     email: {
-        type: String,
+        type: String, 
         unique: true
     },
     password: String,
@@ -37,7 +35,7 @@ const purchaseSchema = new Schema({
 
 const userModel = mongoose.model('user', userSchema);
 const adminModel = mongoose.model('admin', adminSchema);
-const todoModel = mongoose.model('course', courseSchema);
+const courseModel = mongoose.model('course', courseSchema);
 const purchaseModel = mongoose.model('purchase', purchaseSchema);
 
-module.exports = { userModel, adminModel, todoModel, purchaseModel };
+module.exports = { userModel, adminModel, courseModel, purchaseModel };
